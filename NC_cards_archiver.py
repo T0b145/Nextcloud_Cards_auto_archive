@@ -39,7 +39,7 @@ Done_stack = nc.stack_details(board_id, stack_id)
 if Done_stack.status_code == 200:
     for card in Done_stack.json()["cards"]:
         if card['lastModified'] < last_week:
-            archive_card(board_id, card)
+            nc.archive_card(board_id, card)
             #print ("Archived:", card["title"], time.ctime(card['lastModified']))
 else:
     print("connection failed")
