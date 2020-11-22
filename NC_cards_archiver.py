@@ -27,7 +27,7 @@ class NC_decks_worker:
         return r
 
 
-last_week = datetime.now()-timedelta(days = 7)
+last_week = datetime.now()-timedelta(days = 1)
 last_week = datetime.timestamp(last_week)
 
 board_id = 4
