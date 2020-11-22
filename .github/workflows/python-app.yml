@@ -23,5 +23,9 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run app
+      env:
+        NC_USER: ${{ secrets.NC_USER }}
+        NC_PASSWORD: ${{ secrets.NC_PASSWORD }}
+        NC_URL: ${{ secrets.NC_URL }}
       run: |
         python NC_cards_archiver.py
