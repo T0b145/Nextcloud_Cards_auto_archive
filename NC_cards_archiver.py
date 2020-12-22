@@ -46,7 +46,11 @@ board_id = 4
 stack_id = 10
 last_week = datetime.now()-timedelta(days = 7)
 last_week = datetime.timestamp(last_week)
-Done_stack = nc.stack_details(board_id, stack_id)
+try:
+    Done_stack = nc.stack_details(board_id, stack_id)
+except:
+    logging.error("Request failed")
+    exit()
 if Done_stack.status_code == 200:
     if "cards" in Done_stack.json().keys():
         for card in Done_stack.json()["cards"]:
