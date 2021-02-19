@@ -44,7 +44,7 @@ nc = NC_decks_worker()
 # Archive Cards of board 4 in stack 10
 board_id = 4
 stack_id = 10
-last_week = datetime.now()-timedelta(days = 1)
+last_week = datetime.now()-timedelta(days = 0)
 last_week = datetime.timestamp(last_week)
 try:
     Done_stack = nc.stack_details(board_id, stack_id)
